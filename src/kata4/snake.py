@@ -1,9 +1,9 @@
 import pygame, sys, time, random
 from pygame.locals import *
 
-#pygame.init()
-#play_surface = pygame.display.set_mode((500, 500))
-#fps = pygame.time.Clock()
+pygame.init()
+play_surface = pygame.display.set_mode((500, 500))
+fps = pygame.time.Clock()
 
 class Snake():
     position = [100,50]
@@ -20,23 +20,15 @@ class Snake():
     # Horizontal    -> Movimientos [UP - DOWN]
     # Incremento del movimiento 
     def changeDirection(self):
-        #
-        #
-        #
-        #
-        #
-        #
-        #
-        #
 
-        #
-        #
-        #
-        #
-        #
-        #
-        #
-        #
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                speed = -3
+            elif event.key == pygame.K_DOWN:
+                speed = 3
+        elif event.type == pygame.KEYUP:
+            speed = 0
 
         self.body.insert(0, list(self.position))
 
